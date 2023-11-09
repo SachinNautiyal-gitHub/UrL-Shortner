@@ -1,16 +1,21 @@
 
+import { useState } from 'react';
 import './App.css';
 import Background from './Components/Background';
 import InputShortener from './Components/InputShortener';
 import ResultLink from './Components/ResultLink';
 
 function App() {
+
+   const [inputValue , setInputValue] = useState("");
+
+
   return (
      <>
      <div className='container'>
-     <InputShortener/>
+     <InputShortener setInputValue={setInputValue}/>
      <Background/>
-     <ResultLink/>
+     <ResultLink inputValue={inputValue}/>
      </div>
      </>
   );

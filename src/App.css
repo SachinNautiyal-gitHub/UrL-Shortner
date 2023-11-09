@@ -310,3 +310,9 @@ undefined
   background-color:rgb(217, 166, 12);
   border: none;
 }
+
+
+.result button.copied{
+  background-color: white;
+  color:  rgb(217, 166, 12);
+}
