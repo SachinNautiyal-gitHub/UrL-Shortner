@@ -1,24 +1,16 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { AppContext } from '../context'
 
-const InputShortener = ({setInputValue}) => {
+const InputShortener = () => {
 
- const [value, setValue] = useState("");
-
- const onchage = (e)=>{
-    setValue(e.target.value);
- }
-  
- const handleOnClick = () => {
-     setInputValue(value);
-     setValue("");
- }
+ const {value, onchange, handleOnClick} = useContext(AppContext);
 
   return (
     
       <div className='inputcontainer'>
       <h1>URL <span>Shortner</span> </h1>
       <div>
-      <input type='text' placeholder='peaste a link to shorten it ' value={value} onChange={onchage}></input>
+      <input type='text' placeholder='peaste a link to shorten it ' value={value} onChange={onchange}></input>
       <button onClick={handleOnClick}>Shorten</button>
 
       </div>
