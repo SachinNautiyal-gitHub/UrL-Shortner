@@ -3,11 +3,12 @@ const express = require('express');
 const connectToMongo = require("./DB");
 const app = express();
 const URL = require("./models/Url");
+const cors = require('cors');
 
 const urlRoute = require('./routes/url');
 
 app.use(express.json());
-
+app.use(cors());
 
 connectToMongo();
 

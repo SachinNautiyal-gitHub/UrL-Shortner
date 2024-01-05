@@ -298,6 +298,7 @@ undefined
 .result p{
   color: white;
   border: 1px solid rgb(217, 166, 12);
+  background-color: black;
   padding: 0.5rem 1rem;
   margin-right: 1rem;
 }
@@ -309,6 +310,7 @@ undefined
   cursor: pointer;
   background-color:rgb(217, 166, 12);
   border: none;
+  border-radius: 4px;
 }
 
 
