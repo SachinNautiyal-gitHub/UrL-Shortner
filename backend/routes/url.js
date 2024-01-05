@@ -2,7 +2,7 @@
 const express = require('express');
 const shortid = require('shortid');
 const URL = require('../models/Url');
-let api = "http://localhost:5000"
+const BaseUrl = process.env.BASE_URL;
 
 const router = express.Router();
 
@@ -17,7 +17,7 @@ router.post('/', async(req, res)=>{
         visitHistory:[],
     });
 
-    return res.json({id:`${api}/${shortID}`})
+    return res.json({id:`${BaseUrl}/${shortID}`})
 
 })
 

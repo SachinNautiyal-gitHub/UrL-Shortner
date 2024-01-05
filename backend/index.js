@@ -4,6 +4,7 @@ const connectToMongo = require("./DB");
 const app = express();
 const URL = require("./models/Url");
 const cors = require('cors');
+const PORT = process.env.PORT || 5000 ;
 
 const urlRoute = require('./routes/url');
 
@@ -25,12 +26,17 @@ app.get('/:shortId', async(req, res)=>{
          },
       },
    });
-
-   res.redirect(entry.RedirectUrl);
+     
+    try {
+       res.redirect(entry.RedirectUrl);
+    } catch(error) {
+      
+      res.status(401).send("Enter a valid url");
+    }
 })
 
 
-app.listen(5000, (req, res)=>{
+app.listen(PORT, (req, res)=>{
     console.log("server listning at port 5000");
 })
 
