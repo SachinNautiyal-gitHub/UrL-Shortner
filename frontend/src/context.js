@@ -16,7 +16,7 @@ const AppProvider = ({children})=>{
   const handleOnClick =  async()=>{
        
       setIsLoading(true);
-        const data = await fetch(API,{
+        const data = await fetch(`${API}/url`,{
           method:"POST",
           headers: {
             'Content-Type': 'application/json',
