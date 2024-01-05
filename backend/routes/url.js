@@ -4,9 +4,13 @@ const shortid = require('shortid');
 const URL = require('../models/Url');
 const BaseUrl = process.env.BASE_URL;
 
+const url = "https://urlshortner-backend-cars.onrender.com";
+
+
+
 const router = express.Router();
 
-router.post('/', async(req, res)=>{
+router.post(url, async(req, res)=>{
     const body = req.body;
     if(!body.url) return res.status(400).json({error : "Url is Required"})
     const shortID = shortid(8);

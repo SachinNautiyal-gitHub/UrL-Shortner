@@ -5,7 +5,7 @@ const app = express();
 const URL = require("./models/Url");
 const cors = require('cors');
 const PORT = process.env.PORT || 5000 ;
-
+const url = "https://urlshortner-backend-cars.onrender.com";
 const urlRoute = require('./routes/url');
 
 app.use(express.json());
@@ -15,7 +15,7 @@ connectToMongo();
 
 app.use('/url', urlRoute);
 
-app.get('/:shortId', async(req, res)=>{
+app.get(`${url}/:shortId`, async(req, res)=>{
    const shortId = req.params.shortId;
    const entry = await URL.findOneAndUpdate({
           shortId
