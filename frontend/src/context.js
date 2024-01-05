@@ -10,12 +10,13 @@ const AppProvider = ({children})=>{
   const [isLoding,setIsLoading] = useState(false);
   const [copied, setCopied] = useState(false);
   const [error , setError] = useState(false);
-
+  
+  const API = "https://urlshortner-backend-cars.onrender.com"
 
   const handleOnClick =  async()=>{
        
       setIsLoading(true);
-        const data = await fetch(`http://localhost:5000/url`,{
+        const data = await fetch(API,{
           method:"POST",
           headers: {
             'Content-Type': 'application/json',
