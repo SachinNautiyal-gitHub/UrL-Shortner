@@ -13,9 +13,9 @@ app.use(cors());
 connectToMongo();
 
 app.use('/url', urlRoute);
-app.use('/', (req, res)=>{
-    res.send("Hello from server");
-})
+// app.use('/', (req, res)=>{
+//     res.send("Hello from server");
+// })
 
 app.get(`/:shortId`, async(req, res)=>{
    const shortId = req.params.shortId;
