@@ -11,7 +11,8 @@ const AppProvider = ({children})=>{
   const [copied, setCopied] = useState(false);
   const [error , setError] = useState(false);
   
-  const API = "https://urlshortner-backend-b95y.onrender.com"
+  // const API = "https://urlshortner-backend-b95y.onrender.com"
+  const API = "https://url-shortner-backend-khaki-three.vercel.app/"
 
   const handleOnClick =  async()=>{
        
